@@ -1,8 +1,6 @@
 import React from 'react';
 
-const Button = (props) => {
-  const { onClick, size, value, label } = props;
-
+const Button = ({ onClick, size, value, label }) => {
   return (
     <div
       onClick={onClick}

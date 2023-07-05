@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Display = ({ data }) => {
-  const string = data.join('');
-  return <div className="Display">{string}</div>;
+  return <div className="Display">{data.join('')}</div>;
 };
 
 export default Display;

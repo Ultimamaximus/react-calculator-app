@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import update from 'immutability-helper';
 import * as math from 'mathjs';
 import './App.css';
 import Display from '../Display/Display';
@@ -8,16 +7,6 @@ import Buttons from '../Buttons/Buttons';
 
 const App = () => {
   const [operations, setOperations] = useState([]);
-
-  const calculateOperations = () => {
-    let result = operations.join('');
-    if (result) {
-      result = eval(result);
-      result = math.format(result, { precision: 14 });
-      result = String(result);
-      setOperations([result]);
-    }
-  };
 
   const handleClick = (e) => {
     const value = e.target.getAttribute('data-value');
@@ -29,9 +18,19 @@ const App = () => {
         calculateOperations();
         break;
       default:
-        const newOperations = update(operations, { $push: [value] });
+        const newOperations = [...operations, value];
         setOperations(newOperations);
         break;
+    }
+  };
+
+  const calculateOperations = () => {
+    let result = operations.join('');
+    if (result) {
+      result = eval(result);
+      result = math.format(result, { precision: 14 });
+      result = parseFloat(result);
+      setOperations([result]);
     }
   };
 
