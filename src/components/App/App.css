@@ -65,8 +65,8 @@ body {
 }
 
 .Display {
-  background: #2B293D;
-  color: #59C3C3;
+  background: #405144;
+  color: #c3bc59;
   text-shadow: 0 0 5px rgba(89, 195, 195, 0.5);
   display: flex;
   justify-content: flex-end;
@@ -117,7 +117,7 @@ body {
   justify-content: center;
   width: 25%;
   font-size: 24px;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(87, 119, 75, 0.5);
   height: 20%;
   min-width: 25%;
 }
@@ -131,7 +131,7 @@ body {
 }
 
 .Button:hover {
-  background: #d7ddd3;
+  background: #c8d7bf;
   cursor: pointer;
 }
 
